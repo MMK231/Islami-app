@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Islami App</string>
+    <string name="background_image">Background image</string>
+    <string name="logo_image">Logo image</string>
+    <string name="quran">Quran</string>
+    <string name="hadith">Hadith</string>
+    <string name="sebha">Sebha</string>
+    <string name="radio">Radio</string>
+</resources>
