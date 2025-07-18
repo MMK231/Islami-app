@@ -11,7 +11,6 @@ import com.course.islamiapp.databinding.FragmentHadithBinding
 
 class HadithFragment : Fragment() {
     lateinit var binding: FragmentHadithBinding
-    lateinit var hadeth: Hadeth
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
