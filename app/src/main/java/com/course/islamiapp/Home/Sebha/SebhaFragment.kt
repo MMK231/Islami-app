@@ -49,14 +49,12 @@ private fun SebhaFragment.increaseCounter() {
         if (i <= 32){
             zekrTv.text = "سبحان الله"
             counterTv.text ="$i"
-        }else if ( i > 32 && i <= 65){
+        } else if (i <= 65) {
             zekrTv.text = "الحمد لله"
             counterTv.text ="$i"
         }else{
             zekrTv.text = "الله أكبر"
             counterTv.text ="$i"
         }
-
-
     }
 }
