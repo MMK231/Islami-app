@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/sebhas_bg">
@@ -13,9 +14,9 @@
         android:text="سَبِّحِ اسْمَ رَبِّكَ الأعلى "
         android:textColor="@color/white"
         android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@id/sebha_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/sebha_image"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -27,7 +28,8 @@
         android:src="@drawable/sebha_img"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent=".6"
+        app:layout_constraintHeight_percent=".7"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/sobhan_allah"
         app:layout_constraintWidth_percent=".7" />
@@ -37,23 +39,25 @@
         style="@style/suras_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/sobhan_allah"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/sobhan_allah"
-        android:text="سبحان الله" />
+        tools:text="سبحان الله" />
 
     <TextView
         android:id="@+id/counter"
         style="@style/suras_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="75dp"
+        android:background="@drawable/counter_shape"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="55dp"
         app:layout_constraintTop_toBottomOf="@id/sebha_image"
-        android:text="0" />
+        tools:text="0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
