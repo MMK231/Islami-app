@@ -10,39 +10,49 @@
         android:id="@+id/sobhan_allah"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
         android:fontFamily="@font/janna_lt_regular"
         android:text="سَبِّحِ اسْمَ رَبِّكَ الأعلى "
         android:textColor="@color/white"
-        android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@id/sebha_image"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/sebha_image"
-        android:layout_width="0dp"
+        android:id="@+id/head_of_sebha_image"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:adjustViewBounds="true"
         android:contentDescription="Sebha Image"
-        android:src="@drawable/sebha_img"
+        android:src="@drawable/head_of_sebha"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent=".7"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHeight_percent=".15"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/sobhan_allah"
-        app:layout_constraintWidth_percent=".7" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.272" />
+
+    <ImageView
+        android:id="@+id/body_of_sebha"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/body_of_sebha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/head_of_sebha_image" />
 
     <TextView
         android:id="@+id/zekr"
         style="@style/suras_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/sobhan_allah"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sobhan_allah"
         tools:text="سبحان الله" />
 
     <TextView
@@ -56,7 +66,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/sebha_image"
+        app:layout_constraintTop_toBottomOf="@id/zekr"
         tools:text="0" />
 
 

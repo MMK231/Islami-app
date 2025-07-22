@@ -4,57 +4,57 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.course.islamiapp.R
+import com.course.islamiapp.databinding.FragmentSebhaBinding
 
 class SebhaFragment : Fragment() {
-    lateinit var sebhaImg: ImageView
-    lateinit var zekrTv: TextView
-    lateinit var counterTv: TextView
+    lateinit var binding: FragmentSebhaBinding
+    var counter: Int = 0
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_sebha, container, false)
+        binding = FragmentSebhaBinding.inflate(layoutInflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initViews(view)
         onSebhaClick()
     }
 
 
-
     private fun onSebhaClick() {
-        sebhaImg.setOnClickListener { view ->
-            increaseCounter()
-            return@setOnClickListener
+        binding.bodyOfSebha.setOnClickListener {
+            changeZekrAndRotateImg()
         }
-    }
 
-    private fun initViews(view: View) {
-        sebhaImg = view.findViewById(R.id.sebha_image)
-        zekrTv = view.findViewById(R.id.zekr)
-        counterTv = view.findViewById(R.id.counter)
     }
-
 }
 
-private fun SebhaFragment.increaseCounter() {
-    for (i in 0 until 99) {
-        if (i <= 32){
-            zekrTv.text = "سبحان الله"
-            counterTv.text ="$i"
-        } else if (i <= 65) {
-            zekrTv.text = "الحمد لله"
-            counterTv.text ="$i"
-        }else{
-            zekrTv.text = "الله أكبر"
-            counterTv.text ="$i"
+private fun SebhaFragment.changeZekrAndRotateImg() {
+    counter++
+    binding.bodyOfSebha.animate().rotationBy(45f).setDuration(300).start()
+    binding.counter.text = counter.toString()
+    when (counter) {
+        in 1..33 -> binding.zekr.text = "سبحان الله"
+        in 34..66 -> binding.zekr.text = "الحمد لله"
+        in 67..99 -> binding.zekr.text = "الله أكبر"
+        100 -> binding.zekr.text = "لا اله الا الله"
+
+        else -> {
+            counter = 0
+            binding.counter.text = "0"
+            binding.zekr.text = "سبحان الله"
         }
+
+
     }
 }
+
+
+
+
+
+
