@@ -1,4 +1,4 @@
-package com.course.islamiapp.Home
+package com.course.islamiapp.Home.HadithDetails
 
 import android.os.Bundle
 import android.widget.TextView
