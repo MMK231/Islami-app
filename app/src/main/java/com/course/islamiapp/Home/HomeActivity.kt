@@ -42,10 +42,14 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun showTab(fragment: Fragment) {
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.fragment_container, fragment)
-            .commit()
+        supportFragmentManager.beginTransaction()
+            .setCustomAnimations(
+                R.anim.slide_in,
+                R.anim.fade_out,
+                R.anim.fade_in,
+                R.anim.slide_out
+            ).replace(R.id.fragment_container, fragment)
+            .addToBackStack(null).commit()
     }
 }
 

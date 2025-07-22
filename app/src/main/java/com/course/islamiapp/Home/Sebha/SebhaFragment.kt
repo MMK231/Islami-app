@@ -21,6 +21,8 @@ class SebhaFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.zekr.text = "سبحان الله"
+        binding.counter.text = "0"
         onSebhaClick()
     }
 
