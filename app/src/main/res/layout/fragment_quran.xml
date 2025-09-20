@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:background="@drawable/bg_final_img">
 
-    <SearchView
+    <androidx.appcompat.widget.SearchView
         android:id="@+id/search_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,8 +14,7 @@
         android:layout_marginHorizontal="16dp"
         android:background="@drawable/search_bar_shape"
         android:iconifiedByDefault="false"
-        android:queryHint="ابحث عن السورة "
-        android:searchIcon="@drawable/quran_search_img"
+        app:queryHint="Search for Sura"
         app:layout_constraintBottom_toTopOf="@id/chapters_rv"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

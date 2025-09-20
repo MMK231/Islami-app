@@ -1,16 +1,15 @@
 package com.course.islamiapp.Home.Quran
 
 
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.course.islamiapp.R
 import androidx.recyclerview.widget.RecyclerView
+import com.course.islamiapp.R
 
 
-class SurasAdapter(val suras: List<String> = listOf()) :
+class SurasAdapter(var suras: List<String>) :
     RecyclerView.Adapter<SurasAdapter.ViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -28,9 +27,9 @@ class SurasAdapter(val suras: List<String> = listOf()) :
         var title = suras[position]
         holder.title.setText(suras[position])
         if (onItemClickListener != null) {
-           holder.itemView.setOnClickListener{
-               onItemClickListener?.OnItemClick(position, title)
-           }
+            holder.itemView.setOnClickListener {
+                onItemClickListener?.OnItemClick(position, title)
+            }
         }
     }
 
@@ -39,6 +38,11 @@ class SurasAdapter(val suras: List<String> = listOf()) :
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title = itemView.findViewById<TextView>(R.id.suras_tv)
+    }
+
+    fun setFilteredList(suras: List<String>) {
+        this.suras = suras
+        notifyDataSetChanged()
     }
 
     fun interface OnItemClickListener {
